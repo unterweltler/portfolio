@@ -18,6 +18,7 @@ const GlobalStyles = () => (
 
 			body {
 				font-family: monospace;
+				line-height: 1.5;
 				color: ${colors.foreground};
 			}
 

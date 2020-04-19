@@ -1,5 +1,3 @@
-import { rem } from 'polished'
-
 const theme = {
 	// dracula theme colors - https://github.com/dracula/dracula-theme
 	colors: {

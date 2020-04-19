@@ -15,7 +15,7 @@ const theme = {
 		yellow: '#f1fa8c',
 	},
 	page: {
-		maxWidth: rem(1200),
+		maxWidth: '120ch',
 	},
 }
 

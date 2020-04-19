@@ -15,6 +15,7 @@ const StyledContainer = styled.div(
 	}) => css`
 		max-width: ${maxWidth};
 		margin: 0 auto;
+		padding: 0 1rem;
 	`
 )
 

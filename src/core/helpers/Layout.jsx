@@ -10,12 +10,17 @@ import Footer from '../../components/Footer'
 const StyledContainer = styled.div(
 	({
 		theme: {
-			page: { maxWidth },
+			layout: { pageOffsets, maxWidth },
+			mixins: { responsiveStyles },
 		},
 	}) => css`
 		max-width: ${maxWidth};
 		margin: 0 auto;
-		padding: 0 1rem;
+
+		${responsiveStyles({
+			'padding-left': { ...pageOffsets },
+			'padding-right': { ...pageOffsets },
+		})}
 	`
 )
 

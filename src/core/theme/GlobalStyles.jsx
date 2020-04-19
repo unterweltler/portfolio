@@ -26,6 +26,11 @@ const GlobalStyles = () => (
 					font-family: 'Fira Code', monospace;
 				}
 			}
+
+			img {
+				display: block;
+				max-width: 100%;
+			}
 		`}
 	/>
 )

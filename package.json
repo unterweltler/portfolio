@@ -19,6 +19,7 @@
     "emotion-theming": "10.0.27",
     "gatsby": "^2.20.12",
     "gatsby-plugin-emotion": "4.2.2",
+    "gatsby-plugin-google-fonts-v2": "0.0.6",
     "polished": "3.5.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

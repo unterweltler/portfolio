@@ -6,5 +6,19 @@
 
 module.exports = {
 	/* Your site config here */
-	plugins: [`gatsby-plugin-emotion`],
+	plugins: [
+		`gatsby-plugin-emotion`,
+		{
+			resolve: `gatsby-plugin-google-fonts-v2`,
+			options: {
+				fonts: [
+					{
+						family: 'Fira Code',
+						variable: true,
+						weights: ['300..700'],
+					},
+				],
+			},
+		},
+	],
 }

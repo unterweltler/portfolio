@@ -17,7 +17,14 @@ const GlobalStyles = () => (
 			}
 
 			body {
+				font-family: monospace;
 				color: ${colors.foreground};
+			}
+
+			@supports (font-variation-settings: normal) {
+				body {
+					font-family: 'Fira Code', monospace;
+				}
 			}
 		`}
 	/>

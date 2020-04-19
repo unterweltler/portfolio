@@ -1,3 +1,6 @@
+import { pageOffsets } from './layout'
+import mixins from './mixins'
+
 const theme = {
 	// dracula theme colors - https://github.com/dracula/dracula-theme
 	colors: {
@@ -12,9 +15,11 @@ const theme = {
 		red: '#ff5555',
 		yellow: '#f1fa8c',
 	},
-	page: {
+	layout: {
 		maxWidth: '120ch',
+		pageOffsets,
 	},
+	mixins,
 }
 
 export default theme

@@ -1,12 +1,21 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { em } from 'polished'
+import { css } from '@emotion/core'
 import logo from '../../assets/logo.svg'
 
-const StyledLogo = styled.img`
-	max-height: ${em(50)};
-	width: auto;
-`
+const StyledLogo = styled.img(
+	({
+		theme: {
+			mixins: { responsiveStyles },
+		},
+	}) => css`
+		width: auto;
+
+		${responsiveStyles({
+			'max-height': { zero: 24, medium: 32, large: 48 },
+		})};
+	`
+)
 
 const Logo = () => <StyledLogo src={logo} alt="Logo" />
 

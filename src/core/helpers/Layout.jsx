@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
 		<GlobalStyles />
 		<StyledContainer>
 			<Header />
-			{children}
+			<section>{children}</section>
 			<Footer />
 		</StyledContainer>
 	</ThemeProvider>

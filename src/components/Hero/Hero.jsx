@@ -17,16 +17,12 @@ const Hero = () => (
 	<div>
 		<StyledTitle>Hey, I'm Manuel!</StyledTitle>
 		<StyledText>
+			<p>I'm a Senior Frontend Developer with a crush on React, CSS-in-JS and Headless Websites.</p>
 			<p>
-				I'm a Senior Frontend Developer with a crush on React, CSS-in-JS and
-				Headless Websites.
-			</p>
-			<p>
-				I work @Unic in Zurich - where I take beautiful Designs and turn them
-				into performant, responsive and beautiful Webapps.
+				I work at Unic in Zurich - where I take beautiful Designs and turn them into performant, responsive and
+				beautiful Webapps.
 				<br />
-				In my free-time I enjoy exploring the Swiss-Mountains, SUP (Stand Up
-				Paddling) or tinkering with 3D Printers.
+				In my free-time I enjoy exploring the Swiss-Mountains, SUP (Stand Up Paddling) or tinkering with 3D Printers.
 			</p>
 		</StyledText>
 	</div>

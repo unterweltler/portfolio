@@ -4,7 +4,7 @@ import { normalize } from 'polished'
 
 const GlobalStyles = () => (
 	<Global
-		styles={({ colors }) => css`
+		styles={({ animations, colors }) => css`
 			${normalize()}
 
 			html {
@@ -31,6 +31,21 @@ const GlobalStyles = () => (
 			img {
 				display: block;
 				max-width: 100%;
+			}
+
+			a {
+				color: inherit;
+				text-decoration-skip-ink: auto;
+				text-decoration-color: ${colors.pink};
+				text-decoration-thickness: 0.125em;
+				text-underline-offset: 2px;
+				transition: all ${animations.duration}s ${animations.timingFunc};
+
+				&:hover,
+				&:focus {
+					color: ${colors.pink};
+					text-decoration-color: ${colors.green};
+				}
 			}
 		`}
 	/>

@@ -2,6 +2,10 @@ import { pageOffsets } from './layout'
 import mixins from './mixins'
 
 const theme = {
+	animations: {
+		duration: 0.25,
+		timingFunc: 'ease-out',
+	},
 	// dracula theme colors - https://github.com/dracula/dracula-theme
 	colors: {
 		background: '#282a36',

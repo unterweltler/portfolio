@@ -4,7 +4,7 @@ import { normalize } from 'polished'
 
 const GlobalStyles = () => (
 	<Global
-		styles={({ animations, colors }) => css`
+		styles={({ animations, colors, mixins }) => css`
 			${normalize()}
 
 			html {
@@ -46,6 +46,44 @@ const GlobalStyles = () => (
 					color: ${colors.pink};
 					text-decoration-color: ${colors.green};
 				}
+			}
+
+			h1,
+			h2,
+			h3,
+			h4 {
+				color: ${colors.pink};
+				line-height: 1;
+
+				&:before {
+					content: '→';
+					color: ${colors.green};
+					padding-right: 0.5rem;
+					font-size: 120%;
+				}
+
+				&:after {
+					content: '()';
+					color: ${colors.cyan};
+					padding-left: 0.25rem;
+					font-size: 80%;
+				}
+			}
+
+			h1 {
+				${mixins.fluidStyle('font-size', { min: 26, max: 30 })};
+			}
+
+			h2 {
+				${mixins.fluidStyle('font-size', { min: 22, max: 26 })};
+			}
+
+			h3 {
+				${mixins.fluidStyle('font-size', { min: 18, max: 22 })};
+			}
+
+			h4 {
+				${mixins.fluidStyle('font-size', { min: 16, max: 18 })};
 			}
 		`}
 	/>

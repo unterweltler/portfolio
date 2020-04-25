@@ -2,8 +2,7 @@ import { em } from 'polished'
 import { up } from '../helpers/Breakpoints'
 import { breakpoints } from './layout'
 
-const formatSize = value =>
-	typeof value === 'number' && value !== 0 ? em(value) : value
+const formatSize = value => (typeof value === 'number' && value !== 0 ? em(value) : value)
 
 const responsiveStyles = props => {
 	let style = ``
@@ -44,8 +43,20 @@ const responsiveStyles = props => {
 	return style
 }
 
+const fluidStyle = (prop, { min, max, minViewport = 360, maxViewport = 1200 }) => {
+	let style = ``
+
+	style += `${prop}: ${em(max)};`
+	style += `${prop}: clamp(${em(min)}, calc(${em(min)} + (${max} - ${min}) * (100vw - ${em(
+		minViewport
+	)}) / (${maxViewport} - ${minViewport})), ${em(max)});`
+
+	return style
+}
+
 const mixins = {
 	responsiveStyles,
+	fluidStyle,
 }
 
 export default mixins

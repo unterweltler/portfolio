@@ -1,17 +1,25 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { em } from 'polished'
+import { css } from '@emotion/core'
 
-const StyledTitle = styled.h1`
-	margin-top: 0;
-	font-size: ${em(38)};
-	font-size: clamp(${em(24)}, 1em + 3vw, ${em(38)});
-`
+const StyledTitle = styled.h1(
+	({ theme: { colors, mixins } }) => css`
+		margin-top: 0;
+		color: ${colors.foreground};
+		${mixins.fluidStyle('font-size', { min: 24, max: 38 })};
 
-const StyledText = styled.div`
-	font-size: ${em(20)};
-	font-size: clamp(${em(16)}, 1em + 0.3125vw, ${em(20)});
-`
+		&:before,
+		&:after {
+			display: none;
+		}
+	`
+)
+
+const StyledText = styled.div(
+	({ theme: { mixins } }) => css`
+		${mixins.fluidStyle('font-size', { min: 16, max: 20 })};
+	`
+)
 
 const Hero = () => (
 	<div>

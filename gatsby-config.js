@@ -9,9 +9,15 @@ require('dotenv').config({
 })
 
 module.exports = {
-	/* Your site config here */
+	siteMetadata: {
+		title: `Frontend Developer`,
+		titleTemplate: '%s - Manuel Lieb',
+		url: `https://www.pixelschubser.ch`,
+		description: `Portfolio Page of Manuel Lieb - Senior Frontend Developer`,
+	},
 	plugins: [
 		`gatsby-plugin-emotion`,
+		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-plugin-google-fonts-v2`,
 			options: {

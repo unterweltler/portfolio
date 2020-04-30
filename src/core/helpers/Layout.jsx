@@ -6,6 +6,7 @@ import theme from '../theme'
 import GlobalStyles from '../theme/GlobalStyles'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import SEO from './SEO'
 
 const StyledContainer = styled.div(
 	({
@@ -26,14 +27,17 @@ const StyledContainer = styled.div(
 )
 
 const Layout = ({ children }) => (
-	<ThemeProvider theme={theme}>
-		<GlobalStyles />
-		<StyledContainer>
-			<Header />
-			{children}
-			<Footer />
-		</StyledContainer>
-	</ThemeProvider>
+	<>
+		<SEO />
+		<ThemeProvider theme={theme}>
+			<GlobalStyles />
+			<StyledContainer>
+				<Header />
+				{children}
+				<Footer />
+			</StyledContainer>
+		</ThemeProvider>
+	</>
 )
 
 export default Layout

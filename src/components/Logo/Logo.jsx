@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { Link } from 'gatsby'
 import logo from '../../assets/logo.svg'
 
 const StyledLogo = styled.img(
@@ -10,6 +11,10 @@ const StyledLogo = styled.img(
 	`
 )
 
-const Logo = () => <StyledLogo src={logo} alt="Logo" />
+const Logo = () => (
+	<Link to="/">
+		<StyledLogo src={logo} alt="Logo" />
+	</Link>
+)
 
 export default Logo

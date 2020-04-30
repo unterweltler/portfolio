@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { RichText } from 'prismic-reactjs'
+import { linkResolver } from '../../core/helpers/linkResolver'
 
 const StyledHero = styled.div`
 	grid-column: 3 / 4;
@@ -24,17 +26,11 @@ const StyledText = styled.div(
 	`
 )
 
-const Hero = () => (
+const Hero = ({ title, text }) => (
 	<StyledHero>
-		<StyledTitle>Hey, I'm Manuel!</StyledTitle>
+		<StyledTitle>{RichText.asText(title)}</StyledTitle>
 		<StyledText>
-			<p>I'm a Senior Frontend Developer with a crush on React, CSS-in-JS and Headless Websites.</p>
-			<p>
-				I work at Unic in Zurich - where I take beautiful Designs and turn them into performant, responsive and
-				beautiful Webapps.
-				<br />
-				In my free-time I enjoy exploring the Swiss-Mountains, SUP (Stand Up Paddling) or tinkering with 3D Printers.
-			</p>
+			<RichText render={text} linkResolver={linkResolver} />
 		</StyledText>
 	</StyledHero>
 )

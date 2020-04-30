@@ -10,17 +10,18 @@ import Footer from '../../components/Footer'
 const StyledContainer = styled.div(
 	({
 		theme: {
-			layout: { pageOffsets, maxWidth },
-			mixins: { responsiveStyles },
+			layout: { maxWidth },
 		},
 	}) => css`
+		display: grid;
+		grid-template-columns:
+			1rem
+			1fr
+			minmax(auto, 57ch)
+			1fr
+			1rem;
 		max-width: ${maxWidth};
 		margin: 0 auto;
-
-		${responsiveStyles({
-			'padding-left': { ...pageOffsets },
-			'padding-right': { ...pageOffsets },
-		})}
 	`
 )
 
@@ -29,7 +30,7 @@ const Layout = ({ children }) => (
 		<GlobalStyles />
 		<StyledContainer>
 			<Header />
-			<section>{children}</section>
+			{children}
 			<Footer />
 		</StyledContainer>
 	</ThemeProvider>

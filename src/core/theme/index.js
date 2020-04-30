@@ -1,4 +1,3 @@
-import { pageOffsets } from './layout'
 import mixins from './mixins'
 
 const theme = {
@@ -21,7 +20,6 @@ const theme = {
 	},
 	layout: {
 		maxWidth: '120ch',
-		pageOffsets,
 	},
 	mixins,
 }

@@ -6,6 +6,7 @@ import SocialLinks from '../SocialLinks'
 
 const StyledFooter = styled.footer(
 	({ theme: { colors } }) => css`
+		grid-column: 2 / 5;
 		padding-bottom: 1em;
 
 		hr {

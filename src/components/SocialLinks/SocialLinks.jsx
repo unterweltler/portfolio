@@ -31,15 +31,15 @@ const StyledLink = styled.a(
 
 const SocialLinks = () => (
 	<StyledList component="ul" space={10}>
-		<StyledLink href="https://github.com/unterweltler">
+		<StyledLink href="https://github.com/unterweltler" target="_blank" rel="noopener">
 			<IoLogoGithub />
 			Github
 		</StyledLink>
-		<StyledLink href="https://twitter.com/seniorpxl">
+		<StyledLink href="https://twitter.com/seniorpxl" target="_blank" rel="noopener">
 			<IoLogoTwitter />
 			Twitter
 		</StyledLink>
-		<StyledLink href="www.linkedin.com/in/manuel-lieb">
+		<StyledLink href="www.linkedin.com/in/manuel-lieb" target="_blank" rel="noopener">
 			<IoLogoLinkedin />
 			Linkedin
 		</StyledLink>

@@ -23,6 +23,7 @@ const StyledLink = styled.a(
 		}
 
 		svg {
+			font-size: 120%;
 			padding-right: ${em(5)};
 		}
 	`
@@ -30,15 +31,15 @@ const StyledLink = styled.a(
 
 const SocialLinks = () => (
 	<StyledList component="ul" space={10}>
-		<StyledLink href="#github">
+		<StyledLink href="https://github.com/unterweltler">
 			<IoLogoGithub />
 			Github
 		</StyledLink>
-		<StyledLink href="#twitter">
+		<StyledLink href="https://twitter.com/seniorpxl">
 			<IoLogoTwitter />
 			Twitter
 		</StyledLink>
-		<StyledLink href="#linkedin">
+		<StyledLink href="www.linkedin.com/in/manuel-lieb">
 			<IoLogoLinkedin />
 			Linkedin
 		</StyledLink>

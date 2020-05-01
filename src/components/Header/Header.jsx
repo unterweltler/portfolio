@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { rem } from 'polished'
 import Logo from '../Logo'
 
 const StyledHeader = styled.header(
-	({ theme: { colors } }) => css`
+	({ theme: { colors, mixins } }) => css`
 		grid-column: 2 / 5;
-		padding: ${rem(24)} 0;
+		${mixins.fluidStyle('padding-top', { min: 16, max: 24 })};
+		${mixins.fluidStyle('padding-bottom', { min: 16, max: 24 })};
 		background-color: ${colors.background};
 	`
 )

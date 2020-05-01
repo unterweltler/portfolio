@@ -43,7 +43,7 @@ const responsiveStyles = props => {
 	return style
 }
 
-const fluidStyle = (prop, { min, max, minViewport = 360, maxViewport = 1200 }) => {
+const fluidStyle = (prop, { min, max, minViewport = 360, maxViewport = 1280 }) => {
 	let style = ``
 
 	style += `${prop}: ${em(max)};`

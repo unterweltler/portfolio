@@ -1,0 +1,7 @@
+{
+	"ext": "jsx",
+	"dimensions": false,
+	"replaceAttrValues": {
+		"#fff": "{props.color}"
+	}
+}

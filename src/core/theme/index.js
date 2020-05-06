@@ -3,6 +3,7 @@ import mixins from './mixins'
 const theme = {
 	animations: {
 		duration: 0.25,
+		durationKenBurns: 5,
 		timingFunc: 'ease-out',
 	},
 	// dracula theme colors - https://github.com/dracula/dracula-theme

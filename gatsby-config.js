@@ -37,14 +37,14 @@ module.exports = {
 				accessToken: `${process.env.API_KEY}`,
 				path: '/preview',
 				previews: true,
-				// pages: [
-				// 	{
-				// 		type: 'Article', // TypeName from prismic
-				// 		match: '/article/:uid', // Pages will be generated under this pattern
-				// 		path: '/article', // Placeholder page for unpublished documents
-				// 		component: require.resolve('./src/templates/article.js'),
-				// 	},
-				// ],
+				pages: [
+					{
+						type: 'Project',
+						match: '/project/:uid',
+						path: '/project',
+						component: require.resolve('./src/templates/project.jsx'),
+					},
+				],
 			},
 		},
 	],

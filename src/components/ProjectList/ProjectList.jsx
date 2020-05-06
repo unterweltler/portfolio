@@ -12,22 +12,27 @@ const StyledWrapper = styled.div`
 `
 
 const StyledList = styled.div(
-	({ theme: { mixins } }) => css`
+	({ theme: { mixins }, isHomeVariant }) => css`
 		display: grid;
 		gap: 1rem;
 		${mixins.responsiveStyles({ 'grid-template-columns': { small: 'repeat(auto-fill, minmax(320px, 1fr))' } })};
+
+		${isHomeVariant &&
+		css`
+			${StyledCard} {
+				&:last-of-type {
+					${mixins.responsiveStyles({ display: { zero: 'none', large: 'block' } })}
+				}
+			}
+		`}
 	`
 )
 
 const StyledCard = styled.div(
-	({ theme: { animations, colors, mixins } }) => css`
+	({ theme: { animations, colors } }) => css`
 		position: relative;
 		border: ${rem(2)} solid ${colors.comment};
 		transition: border-color ${animations.duration}s ${animations.timingFunc};
-
-		&:last-of-type {
-			${mixins.responsiveStyles({ display: { zero: 'none', large: 'block' } })}
-		}
 
 		&:hover {
 			border-color: ${colors.yellow};
@@ -108,11 +113,13 @@ const ProjectCard = ({
 	)
 }
 
-const ProjectList = ({ title, projects, showLink }) => {
+const ProjectList = ({ title, projects, showLink, variant }) => {
+	const isHomeVariant = variant === 'home'
+
 	return projects ? (
 		<StyledWrapper>
 			{title && <h2>{title}</h2>}
-			<StyledList>
+			<StyledList isHomeVariant={isHomeVariant}>
 				{projects.map(project => (
 					<ProjectCard key={project.node._meta.uid} project={project} />
 				))}

@@ -14,6 +14,7 @@ const StyledLink = styled(Link)(
 			mixins,
 		},
 	}) => css`
+		// TODO: find way to re-enable focus outline
 		display: inline-block;
 		${mixins.fluidStyle('height', logoHeight)};
 
@@ -21,7 +22,8 @@ const StyledLink = styled(Link)(
 			transition: transform ${duration}s ${timingFunc};
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			svg {
 				&:nth-of-type(2) {
 					transform: translate3d(2px, 2px, 0);
@@ -51,7 +53,7 @@ const Logo = () => {
 	const theme = useTheme()
 
 	return (
-		<StyledLink to="/">
+		<StyledLink to="/" tabIndex={0}>
 			<StyledLogo color={theme.colors.foreground} options={{ zIndex: 3 }} />
 			<StyledLogo color={theme.colors.pink} options={{ zIndex: 2 }} />
 			<StyledLogo color={theme.colors.cyan} options={{ zIndex: 1 }} />

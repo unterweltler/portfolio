@@ -13,7 +13,7 @@ const StyledList = styled(Stack)`
 
 const StyledLink = styled.a(
 	({ theme: { colors } }) => css`
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		text-decoration: none;
 

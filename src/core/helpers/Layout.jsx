@@ -12,6 +12,7 @@ const StyledContainer = styled.div(
 	({
 		theme: {
 			layout: { maxWidth },
+			mixins,
 		},
 	}) => css`
 		display: grid;
@@ -23,6 +24,7 @@ const StyledContainer = styled.div(
 			1rem;
 		max-width: ${maxWidth};
 		margin: 0 auto;
+		${mixins.fluidStyle('row-gap', { min: 32, max: 64 })};
 	`
 )
 

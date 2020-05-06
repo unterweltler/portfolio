@@ -48,12 +48,22 @@ const GlobalStyles = () => (
 				}
 			}
 
+			p {
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+
 			h1,
 			h2,
 			h3,
 			h4 {
 				color: ${colors.pink};
 				line-height: 1;
+
+				&:first-of-type {
+					margin-top: 0;
+				}
 
 				&:before {
 					content: '→';

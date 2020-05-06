@@ -7,7 +7,6 @@ const StyledHeader = styled.header(
 	({ theme: { colors, mixins } }) => css`
 		grid-column: 2 / 5;
 		${mixins.fluidStyle('padding-top', { min: 16, max: 24 })};
-		${mixins.fluidStyle('padding-bottom', { min: 16, max: 24 })};
 		background-color: ${colors.background};
 	`
 )

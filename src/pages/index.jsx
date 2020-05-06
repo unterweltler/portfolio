@@ -2,13 +2,16 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../core/helpers/Layout'
 import Hero from '../components/Hero'
+import ProjectList from '../components/ProjectList'
 
 export default ({ data }) => {
-	const content = data.prismic.allHomepages.edges.slice(0, 1).pop().node
+	const content = data.prismic.allHomepages.edges[0].node
+	const projects = data.prismic.allProjects.edges
 
 	return (
 		<Layout>
 			<Hero title={content.hero_title} text={content.hero_text} />
+			<ProjectList title="Latest Projects" projects={projects} showLink />
 		</Layout>
 	)
 }
@@ -21,6 +24,18 @@ export const query = graphql`
 					node {
 						hero_text
 						hero_title
+					}
+				}
+			}
+			allProjects(sortBy: date_DESC, first: 3) {
+				edges {
+					node {
+						title
+						image
+						_meta {
+							uid
+							type
+						}
 					}
 				}
 			}

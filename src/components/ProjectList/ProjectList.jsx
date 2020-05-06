@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import { rem, em } from 'polished'
 import { RichText } from 'prismic-reactjs'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import { linkResolver } from '../../core/helpers/linkResolver'
 import Button from '../Button'
 
@@ -54,7 +55,7 @@ const StyledImageWrapper = styled.div`
 	overflow: hidden;
 `
 
-const StyledImage = styled.img(
+const StyledImage = styled(Img)(
 	({ theme: { animations } }) => css`
 		// reset transition time 10% of the durationKenBurns
 		transition: transform ${animations.durationKenBurns * 0.1}s ${animations.timingFunc};
@@ -98,14 +99,14 @@ const StyledButton = styled(Button)`
 
 const ProjectCard = ({
 	project: {
-		node: { _meta, title, image },
+		node: { _meta, title, imageSharp },
 	},
 }) => {
 	return (
 		<StyledCard>
 			<Link to={linkResolver(_meta)}>
 				<StyledImageWrapper>
-					<StyledImage src={image.url} alt={image.alt} />
+					<StyledImage fluid={imageSharp.childImageSharp.fluid} />
 				</StyledImageWrapper>
 				<StyledTitle>{RichText.asText(title)}</StyledTitle>
 			</Link>

@@ -31,7 +31,13 @@ export const query = graphql`
 				edges {
 					node {
 						title
-						image
+						imageSharp {
+							childImageSharp {
+								fluid(traceSVG: { background: "#50fa7b", color: "#6272a4" }) {
+									...GatsbyImageSharpFluid_withWebp_tracedSVG
+								}
+							}
+						}
 						_meta {
 							uid
 							type

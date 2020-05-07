@@ -31,9 +31,10 @@ export const query = graphql`
 				edges {
 					node {
 						title
+						image
 						imageSharp {
 							childImageSharp {
-								fluid(traceSVG: { background: "#50fa7b", color: "#6272a4" }) {
+								fluid(traceSVG: { background: "#f8f8f2", color: "#282a36" }) {
 									...GatsbyImageSharpFluid_withWebp_tracedSVG
 								}
 							}

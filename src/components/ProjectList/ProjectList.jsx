@@ -106,7 +106,7 @@ const ProjectCard = ({
 		<StyledCard>
 			<Link to={linkResolver(_meta)}>
 				<StyledImageWrapper>
-					<StyledImage fluid={imageSharp.childImageSharp.fluid} />
+					<StyledImage fluid={imageSharp.childImageSharp.fluid} loading="lazy" />
 				</StyledImageWrapper>
 				<StyledTitle>{RichText.asText(title)}</StyledTitle>
 			</Link>

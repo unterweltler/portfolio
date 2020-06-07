@@ -11,7 +11,7 @@ export default ({ data }) => {
 	return (
 		<Layout>
 			<Hero title={content.hero_title} text={content.hero_text} />
-			<ProjectList title="Latest Projects" projects={projects} showLink variant="home" />
+			<ProjectList title="Latest Projects" projects={projects} showMoreLink variant="home" />
 		</Layout>
 	)
 }

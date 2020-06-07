@@ -5,6 +5,7 @@ import { rem, em } from 'polished'
 import { RichText } from 'prismic-reactjs'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { IoMdArrowRoundForward } from 'react-icons/io'
 import { linkResolver } from '../../core/helpers/linkResolver'
 import Button from '../Button'
 
@@ -94,7 +95,6 @@ const StyledLinkWrapper = styled(StyledList)`
 
 const StyledButton = styled(Button)`
 	grid-column-end: -1;
-	display: block;
 `
 
 const ProjectCard = ({
@@ -114,7 +114,7 @@ const ProjectCard = ({
 	)
 }
 
-const ProjectList = ({ title, projects, showLink, variant }) => {
+const ProjectList = ({ title, projects, showMoreLink, variant }) => {
 	const isHomeVariant = variant === 'home'
 
 	return projects ? (
@@ -125,9 +125,12 @@ const ProjectList = ({ title, projects, showLink, variant }) => {
 					<ProjectCard key={project.node._meta.uid} project={project} />
 				))}
 			</StyledList>
-			{showLink && (
-				<StyledLinkWrapper>
-					<StyledButton to="/projects">See more Projects</StyledButton>
+			{showMoreLink && (
+				<StyledLinkWrapper topSpace>
+					<StyledButton to="/projects">
+						<span>See more Projects</span>
+						<IoMdArrowRoundForward />
+					</StyledButton>
 				</StyledLinkWrapper>
 			)}
 		</StyledWrapper>

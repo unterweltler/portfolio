@@ -4,9 +4,12 @@ import { css } from '@emotion/core'
 import { em } from 'polished'
 import { Link } from 'gatsby'
 
-const StyledLink = styled(Link)(
-	({ theme: { colors } }) => css`
-		display: inline-block;
+const StyledLink = styled(Link, {
+	shouldForwardProp: prop => prop !== 'inverted',
+})(
+	({ theme: { colors }, inverted }) => css`
+		display: inline-flex;
+		align-items: center;
 		padding: ${em(10)} ${em(20)};
 		background: ${colors.green};
 		border: 2px solid ${colors.green};
@@ -18,12 +21,28 @@ const StyledLink = styled(Link)(
 			background: ${colors.background};
 			color: ${colors.green};
 		}
+
+		* + * {
+			padding-left: ${em(5)};
+		}
+
+		${inverted &&
+		css`
+			background: transparent;
+			color: ${colors.green};
+
+			&:hover,
+			&:focus {
+				background: ${colors.green};
+				color: ${colors.background};
+			}
+		`}
 	`
 )
 
-const Button = ({ to, className, children }) => {
+const Button = ({ to, className, children, ...rest }) => {
 	return (
-		<StyledLink to={to} className={className}>
+		<StyledLink to={to} className={className} {...rest}>
 			{children}
 		</StyledLink>
 	)

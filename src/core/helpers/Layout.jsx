@@ -28,9 +28,9 @@ const StyledContainer = styled.div(
 	`
 )
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title }) => (
 	<>
-		<SEO />
+		<SEO title={title} />
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<StyledContainer>
